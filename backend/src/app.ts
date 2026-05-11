@@ -56,7 +56,14 @@ function authMiddleware(req: AuthRequest, res: Response, next: NextFunction): vo
 export function createApp(): express.Express {
   const app = express();
   const frontendUrl = process.env.FRONTEND_URL;
-  app.use(cors(frontendUrl ? { origin: frontendUrl } : {}));
+  const corsOptions = {
+    origin: frontendUrl || "*",
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: false,
+  };
+  app.use(cors(corsOptions));
+  app.options("*", cors(corsOptions)); // handle preflight for all routes
   app.use(express.json());
 
   app.get("/health", (_req, res) => {
