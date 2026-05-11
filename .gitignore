@@ -1,0 +1,7 @@
+node_modules
+dist
+coverage
+.env
+infra/.env.backend
+infra/.env.frontend
+*.log
