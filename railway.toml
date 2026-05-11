@@ -2,6 +2,6 @@
 root = "backend"
 
 [deploy]
-startCommand = "cd backend && npm run start"
+startCommand = "npm run start"
 healthcheckPath = "/health"
 healthcheckTimeout = 300
