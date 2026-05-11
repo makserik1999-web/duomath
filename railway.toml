@@ -1,7 +1,0 @@
-[build]
-root = "backend"
-
-[deploy]
-startCommand = "npm run start"
-healthcheckPath = "/health"
-healthcheckTimeout = 300
