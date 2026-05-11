@@ -1,8 +1,0 @@
-[phases.setup]
-nixPkgs = ['nodejs_22', 'npm']
-
-[phases.build]
-cmds = ['cd backend && npm ci && npm run build']
-
-[phases.deploy]
-startCmd = 'cd backend && npm run start'
