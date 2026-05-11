@@ -1,8 +1,9 @@
 import { createApp } from "./app.js";
 import { config } from "./config.js";
-import { ensureConnection } from "./db.js";
+import { ensureConnection, initializeDatabase } from "./db.js";
 
 async function bootstrap(): Promise<void> {
+  initializeDatabase(); // create schema + seed data if DB is empty
   await ensureConnection();
   const app = createApp();
   app.listen(config.port, () => {
