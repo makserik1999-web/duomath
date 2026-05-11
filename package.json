@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "cd backend && npm ci && npm run build",
-    "start": "cd backend && npm run start",
+    "build": "cd backend && npx tsc -p tsconfig.json",
+    "start": "cd backend && node dist/index.js",
     "install:all": "npm install && npm install --prefix backend && npm install --prefix frontend",
     "db:init": "node init-db.mjs",
     "dev:backend": "npm run dev --prefix backend",
